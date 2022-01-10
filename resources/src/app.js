@@ -30,6 +30,27 @@ document.addEventListener("DOMContentLoaded",()=>{
 function btnHit(e){
     let myval=this.innerText
     let mycal=myoutput.innerText
+    // for remove the zeros
+    if(mycal=='0'){
+        mycal=""
+    }
+
+    if(myval =="="){
+        mycal=eval(mycal)
+    }else{
+    let lastchar = mycal.substring(mycal.length-1)
+    if(myoprator.includes(myval)){
+        if(myoprator.includes(lastchar)){
+            mycal=mycal.substring(0,mycal.length-1);
+        }else{
+            mycal=eval(mycal);
+
+        }
+    }
+    }
+if(myval=="c"){
+    mycal
+}
     
     mycal=mycal+myval
     myoutput.innerText=mycal
