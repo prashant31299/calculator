@@ -10,5 +10,28 @@ document.addEventListener("DOMContentLoaded",()=>{
     myoutput.innerHTML="0"
     myoutput.classList.add("output")
     mycalculator.appendChild(myoutput)
-    console.log(myoutput)
+    for(let y =0 ; y< mykey.length;y++){
+        let div =document.createElement("div")
+        div.classList.add("row")
+        for (let x=0;x<mykey[y].length;x++){
+            let btn=document.createElement("div")
+            btn.innerHTML=mykey[y][x]
+            btn.classList.add("btn")
+            btn.addEventListener("click",btnHit);
+            div.appendChild(btn)
+        }
+        mycalculator.appendChild(div)
+        console.log(div);
+    }
+
+    
 })
+
+function btnHit(e){
+    let myval=this.innerText
+    let mycal=myoutput.innerText
+    
+    mycal=mycal+myval
+    myoutput.innerText=mycal
+    console.log( myoutput)
+}
