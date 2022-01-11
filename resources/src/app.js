@@ -32,7 +32,7 @@ function btnHit(e){
     let mycal=myoutput.innerText
     // for remove the zeros
     if(mycal=='0'){
-        mycal=""
+        mycal="";
     }
 
     if(myval =="="){
@@ -47,12 +47,12 @@ function btnHit(e){
 
         }
     }
+    mycal=mycal+myval
     }
 if(myval=="c"){
-    mycal
+    mycal=0;
 }
     
-    mycal=mycal+myval
     myoutput.innerText=mycal
     console.log( myoutput)
 }
